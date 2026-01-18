@@ -1,6 +1,7 @@
 'use server';
 
 import * as brevo from '@getbrevo/brevo';
+import { sql } from '@vercel/postgres';
 
 export async function submitContactForm(prevState: any, formData: FormData) {
   const name = formData.get('name') as string;
@@ -71,6 +72,12 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     createContact.updateEnabled = true;
 
     await contactsApi.createContact(createContact);
+
+    // Save to database
+    await sql`
+      INSERT INTO contact_submissions (name, email, phone, address, message)
+      VALUES (${name}, ${email}, ${phone}, ${address || null}, ${message || null})
+    `;
 
     return {
       success: true,
