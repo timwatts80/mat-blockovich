@@ -47,29 +47,57 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section id="hero" className="relative h-[400px] sm:h-[500px] lg:h-[600px] mt-8 sm:mt-12 lg:mt-16">
-        <Image
-          src="/mat-hero-image.png"
-          alt="Mat Blockovich - Professional Home Inspector"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-[rgba(232,240,230,0.9)] lg:bg-[rgba(232,240,230,0.75)] lg:w-1/2">
-          <div className="max-w-[576px] mx-auto pt-12 sm:pt-24 lg:pt-[164px] px-4 sm:px-6">
-            <h1 className="font-bold text-[28px] sm:text-[36px] lg:text-[48px] leading-[1.2] tracking-[0.35px] text-[#5a4a3a] mb-4">
-              Professional Home Inspections You Can Trust
-            </h1>
-            <p className="text-base sm:text-lg leading-6 sm:leading-7 tracking-[-0.44px] text-[#314158] mb-6">
-              Hi, I'm Mat Blockovich, your local residential home inspector. I provide thorough, detailed inspections to help you make informed decisions about one of the biggest investments of your life.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <button className="bg-[#7a9b76] text-white px-6 sm:px-8 py-3 rounded-[10px] text-sm sm:text-base">
-                Schedule an Inspection
-              </button>
-              <button className="border-2 border-[#7a9b76] text-[#7a9b76] px-6 py-3 rounded-[10px] text-sm sm:text-base">
-                Call Now
-              </button>
+      <section id="hero" className="sm:mt-12 lg:mt-16">
+        {/* Mobile layout: content first, then image */}
+        <div className="lg:hidden">
+          <div className="bg-[#e8f0e6] py-12 px-4">
+            <div className="max-w-[576px] mx-auto">
+              <h1 className="font-bold text-[28px] sm:text-[36px] leading-[1.2] tracking-[0.35px] text-[#5a4a3a] mb-4">
+                Professional Home Inspections You Can Trust
+              </h1>
+              <p className="text-base sm:text-lg leading-6 sm:leading-7 tracking-[-0.44px] text-[#314158] mb-6">
+                Hi, I'm Mat Blockovich, your local residential home inspector. I provide thorough, detailed inspections to help you make informed decisions about one of the biggest investments of your life.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <a href="#contact" className="bg-[#7a9b76] text-white px-6 sm:px-8 py-3 rounded-[10px] text-sm sm:text-base text-center hover:bg-[#6a8b66] transition-colors">
+                  Contact to schedule an inspection
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="relative h-[300px] sm:h-[400px]">
+            <Image
+              src="/mat-hero-image.png"
+              alt="Mat Blockovich - Professional Home Inspector"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
+        
+        {/* Desktop layout: overlaid image and content */}
+        <div className="hidden lg:block relative h-[600px]">
+          <Image
+            src="/mat-hero-image.png"
+            alt="Mat Blockovich - Professional Home Inspector"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-[rgba(232,240,230,0.75)] w-1/2">
+            <div className="max-w-[576px] mx-auto pt-[164px] px-6">
+              <h1 className="font-bold text-[48px] leading-[1.2] tracking-[0.35px] text-[#5a4a3a] mb-4">
+                Professional Home Inspections You Can Trust
+              </h1>
+              <p className="text-lg leading-7 tracking-[-0.44px] text-[#314158] mb-6">
+                Hi, I'm Mat Blockovich, your local residential home inspector. I provide thorough, detailed inspections to help you make informed decisions about one of the biggest investments of your life.
+              </p>
+              <div className="flex gap-4">
+                <a href="#contact" className="bg-[#7a9b76] text-white px-8 py-3 rounded-[10px] text-base text-center hover:bg-[#6a8b66] transition-colors">
+                  Contact to schedule an inspection
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -106,7 +134,7 @@ export default function Home() {
                 Detailed Reporting
               </h3>
               <p className="text-sm leading-5 tracking-[-0.15px] text-[#45556c]">
-                Same-day digital reports with photos, descriptions, and recommendations for every finding.
+                Same-day digital reports with photos and descriptions for every inspection.
               </p>
             </div>
             
@@ -161,13 +189,13 @@ export default function Home() {
               <div className="flex items-center gap-3">
                 <CheckCircleOutlineIcon sx={{ fontSize: 20, color: '#7a9b76' }} />
                 <span className="text-base leading-6 tracking-[-0.31px] text-[#cad5e2]">
-                  Certified and licensed home inspector
+                  ICC Certified and licensed building inspector
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircleOutlineIcon sx={{ fontSize: 20, color: '#7a9b76' }} />
                 <span className="text-base leading-6 tracking-[-0.31px] text-[#cad5e2]">
-                  Same-day detailed inspection reports
+                  Detailed inspection reports within 24 hours
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -186,7 +214,7 @@ export default function Home() {
             
             <div className="bg-[#1d293d] border-l-4 border-[#7a9b76] rounded p-6 shadow-lg">
               <p className="text-base leading-6 tracking-[-0.31px] text-[#cad5e2] italic mb-4">
-                "My mission is simple: to give you a clear picture of your home's condition so you can make the best decision for your family."
+                "My mission is simple: to give you a clear picture of your home's condition so you can make the best decision for you and your family."
               </p>
               <p className="text-base leading-6 tracking-[-0.31px] text-white">
                 — Mat Blockovich
@@ -293,7 +321,7 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <PhoneOutlinedIcon sx={{ fontSize: 20, color: '#7a9b76', marginTop: '4px' }} />
                     <div>
-                      <p className="text-sm leading-5 tracking-[-0.15px] text-[#45556c]">Phone</p>
+                      <p className="text-sm leading-5 tracking-[-0.15px] text-[#45556c]">Call or Text</p>
                       <a href="tel:8018287100" className="text-base leading-6 tracking-[-0.31px] text-[#0f172b]">
                         (801) 828-7100
                       </a>
@@ -374,7 +402,7 @@ export default function Home() {
               </h4>
               <div className="flex flex-col gap-2">
                 <p className="text-sm leading-5 tracking-[-0.15px] text-[#cad5e2]">
-                  Phone: (801) 828-7100
+                  Call or Text: (801) 828-7100
                 </p>
                 <p className="text-sm leading-5 tracking-[-0.15px] text-[#cad5e2]">
                   Email: blockovich1@gmail.com
