@@ -1,6 +1,8 @@
 'use client';
 
 import Image from "next/image";
+import { useActionState, useEffect, useRef } from 'react';
+import { submitContactForm } from './actions';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import AssignmentTurnedInOutlinedIcon from '@mui/icons-material/AssignmentTurnedInOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
@@ -11,6 +13,14 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 export default function Home() {
+  const [state, formAction] = useActionState(submitContactForm, { success: false, message: '' });
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (state.success && formRef.current) {
+      formRef.current.reset();
+    }
+  }, [state.success]);
   return (
     <div className="bg-white relative w-full">
       {/* Header */}
@@ -27,16 +37,16 @@ export default function Home() {
           </div>
           
           <div className="flex items-center gap-8">
-            <button className="text-[#314158] text-base">Home</button>
-            <button className="text-[#314158] text-base">Services</button>
-            <button className="text-[#314158] text-base">About</button>
-            <button className="bg-[#7a9b76] text-white px-6 py-2 rounded-[10px] text-base">Contact</button>
+            <a href="#hero" className="text-[#314158] text-base hover:text-[#7a9b76] transition-colors">Home</a>
+            <a href="#services" className="text-[#314158] text-base hover:text-[#7a9b76] transition-colors">Services</a>
+            <a href="#about" className="text-[#314158] text-base hover:text-[#7a9b76] transition-colors">About</a>
+            <a href="#contact" className="bg-[#7a9b76] text-white px-6 py-2 rounded-[10px] text-base hover:bg-[#6a8b66] transition-colors">Contact</a>
           </div>
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="relative h-[600px] mt-16">
+      <section id="hero" className="relative h-[600px] mt-16">
         <Image
           src="/mat-hero-image.png"
           alt="Mat Blockovich - Professional Home Inspector"
@@ -65,7 +75,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="bg-white py-24 px-[160.5px]">
+      <section id="services" className="bg-white py-24 px-[160.5px]">
         <div className="max-w-[1216px] mx-auto">
           <h2 className="text-[20px] font-medium leading-[30px] tracking-[-0.45px] text-[#5a4a3a] text-center mb-3">
             What I Inspect
@@ -127,11 +137,11 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="bg-[#0f172b] py-24 px-[160.5px]">
+      <section id="about" className="bg-[#0f172b] py-24 px-[160.5px]">
         <div className="max-w-[1216px] mx-auto grid grid-cols-2 gap-16">
           <div className="relative h-[400px] rounded-[14px] overflow-hidden shadow-xl">
             <Image
-              src="/about-image.png"
+              src="/mat-inspecting-kitchen.png"
               alt="Mat Blockovich at work"
               fill
               className="object-cover"
@@ -186,7 +196,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-white py-24 px-[160.5px]">
+      <section id="contact" className="bg-white py-24 px-[160.5px]">
         <div className="max-w-[1216px] mx-auto">
           <h2 className="text-[20px] font-medium leading-[30px] tracking-[-0.45px] text-[#5a4a3a] text-center mb-3">
             Construction permitting and inspections consultation
@@ -196,7 +206,13 @@ export default function Home() {
           </p>
           
           <div className="grid grid-cols-3 gap-12">
-            <form className="col-span-2 flex flex-col gap-6">
+            <form ref={formRef} action={formAction} className="col-span-2 flex flex-col gap-6">
+              {state.message && (
+                <div className={`p-4 rounded-[10px] ${state.success ? 'bg-[#e8f0e6] text-[#314158]' : 'bg-red-50 text-red-800'}`}>
+                  {state.message}
+                </div>
+              )}
+              
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <label className="block text-base leading-6 tracking-[-0.31px] text-[#314158] mb-2">
@@ -204,8 +220,10 @@ export default function Home() {
                   </label>
                   <input
                     type="text"
+                    name="name"
                     placeholder="John Smith"
-                    className="w-full border border-[#cad5e2] rounded-[10px] px-4 py-3 text-base"
+                    required
+                    className="w-full border border-[#cad5e2] rounded-[10px] px-4 py-3 text-base text-[#314158] placeholder:text-gray-500"
                   />
                 </div>
                 <div>
@@ -214,8 +232,10 @@ export default function Home() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     placeholder="john@example.com"
-                    className="w-full border border-[#cad5e2] rounded-[10px] px-4 py-3 text-base"
+                    required
+                    className="w-full border border-[#cad5e2] rounded-[10px] px-4 py-3 text-base text-[#314158] placeholder:text-gray-500"
                   />
                 </div>
               </div>
@@ -227,8 +247,10 @@ export default function Home() {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
                     placeholder="(555) 123-4567"
-                    className="w-full border border-[#cad5e2] rounded-[10px] px-4 py-3 text-base"
+                    required
+                    className="w-full border border-[#cad5e2] rounded-[10px] px-4 py-3 text-base text-[#314158] placeholder:text-gray-500"
                   />
                 </div>
                 <div>
@@ -237,8 +259,9 @@ export default function Home() {
                   </label>
                   <input
                     type="text"
+                    name="address"
                     placeholder="123 Main St, City, State"
-                    className="w-full border border-[#cad5e2] rounded-[10px] px-4 py-3 text-base"
+                    className="w-full border border-[#cad5e2] rounded-[10px] px-4 py-3 text-base text-[#314158] placeholder:text-gray-500"
                   />
                 </div>
               </div>
@@ -248,13 +271,14 @@ export default function Home() {
                   Additional Information
                 </label>
                 <textarea
+                  name="message"
                   placeholder="Tell me about your inspection needs, preferred dates, or any specific concerns..."
-                  className="w-full border border-[#cad5e2] rounded-[10px] px-4 py-3 text-base h-[122px]"
+                  className="w-full border border-[#cad5e2] rounded-[10px] px-4 py-3 text-base text-[#314158] h-[122px] placeholder:text-gray-500"
                 />
               </div>
               
-              <button className="bg-[#7a9b76] text-white px-6 py-4 rounded-[10px] text-base">
-                Request Inspection
+              <button type="submit" className="bg-[#7a9b76] text-white px-6 py-4 rounded-[10px] text-base hover:bg-[#6a8b66] transition-colors">
+                Request Consultation
               </button>
             </form>
             
