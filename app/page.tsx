@@ -25,28 +25,29 @@ export default function Home() {
     <div className="bg-white relative w-full">
       {/* Header */}
       <header className="bg-white sticky top-0 z-50 shadow-sm">
-        <nav className="max-w-[1537px] mx-auto px-[160.5px] h-16 flex items-center justify-between">
+        <nav className="max-w-[1537px] mx-auto px-4 sm:px-8 lg:px-[160.5px] h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="bg-[#7a9b76] rounded-[10px] w-10 h-10 flex items-center justify-center">
               <span className="text-white font-bold text-base">MB</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-[#0f172b] text-base">Mat Blockovich</span>
+              <span className="text-[#0f172b] text-sm sm:text-base">Mat Blockovich</span>
               <span className="text-[#45556c] text-xs">Home Inspector</span>
             </div>
           </div>
           
-          <div className="flex items-center gap-8">
-            <a href="#hero" className="text-[#314158] text-base hover:text-[#7a9b76] transition-colors">Home</a>
-            <a href="#services" className="text-[#314158] text-base hover:text-[#7a9b76] transition-colors">Services</a>
-            <a href="#about" className="text-[#314158] text-base hover:text-[#7a9b76] transition-colors">About</a>
-            <a href="#contact" className="bg-[#7a9b76] text-white px-6 py-2 rounded-[10px] text-base hover:bg-[#6a8b66] transition-colors">Contact</a>
+          <div className="hidden md:flex items-center gap-4 lg:gap-8">
+            <a href="#hero" className="text-[#314158] text-sm lg:text-base hover:text-[#7a9b76] transition-colors">Home</a>
+            <a href="#services" className="text-[#314158] text-sm lg:text-base hover:text-[#7a9b76] transition-colors">Services</a>
+            <a href="#about" className="text-[#314158] text-sm lg:text-base hover:text-[#7a9b76] transition-colors">About</a>
+            <a href="#contact" className="bg-[#7a9b76] text-white px-4 lg:px-6 py-2 rounded-[10px] text-sm lg:text-base hover:bg-[#6a8b66] transition-colors">Contact</a>
           </div>
+          <a href="#contact" className="md:hidden bg-[#7a9b76] text-white px-4 py-2 rounded-[10px] text-sm hover:bg-[#6a8b66] transition-colors">Contact</a>
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section id="hero" className="relative h-[600px] mt-16">
+      <section id="hero" className="relative h-[400px] sm:h-[500px] lg:h-[600px] mt-8 sm:mt-12 lg:mt-16">
         <Image
           src="/mat-hero-image.png"
           alt="Mat Blockovich - Professional Home Inspector"
@@ -54,19 +55,19 @@ export default function Home() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-[rgba(232,240,230,0.75)] w-1/2">
-          <div className="max-w-[576px] mx-auto pt-[164px] px-6">
-            <h1 className="font-bold text-[48px] leading-[48px] tracking-[0.35px] text-[#5a4a3a] mb-4">
+        <div className="absolute inset-0 bg-[rgba(232,240,230,0.9)] lg:bg-[rgba(232,240,230,0.75)] lg:w-1/2">
+          <div className="max-w-[576px] mx-auto pt-12 sm:pt-24 lg:pt-[164px] px-4 sm:px-6">
+            <h1 className="font-bold text-[28px] sm:text-[36px] lg:text-[48px] leading-[1.2] tracking-[0.35px] text-[#5a4a3a] mb-4">
               Professional Home Inspections You Can Trust
             </h1>
-            <p className="text-lg leading-7 tracking-[-0.44px] text-[#314158] mb-6">
+            <p className="text-base sm:text-lg leading-6 sm:leading-7 tracking-[-0.44px] text-[#314158] mb-6">
               Hi, I'm Mat Blockovich, your local residential home inspector. I provide thorough, detailed inspections to help you make informed decisions about one of the biggest investments of your life.
             </p>
-            <div className="flex gap-4">
-              <button className="bg-[#7a9b76] text-white px-8 py-3 rounded-[10px] text-base">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <button className="bg-[#7a9b76] text-white px-6 sm:px-8 py-3 rounded-[10px] text-sm sm:text-base">
                 Schedule an Inspection
               </button>
-              <button className="border-2 border-[#7a9b76] text-[#7a9b76] px-6 py-3 rounded-[10px] text-base">
+              <button className="border-2 border-[#7a9b76] text-[#7a9b76] px-6 py-3 rounded-[10px] text-sm sm:text-base">
                 Call Now
               </button>
             </div>
@@ -75,16 +76,16 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="bg-white py-24 px-[160.5px]">
+      <section id="services" className="bg-white py-12 sm:py-16 lg:py-24 px-4 sm:px-8 lg:px-[160.5px]">
         <div className="max-w-[1216px] mx-auto">
-          <h2 className="text-[20px] font-medium leading-[30px] tracking-[-0.45px] text-[#5a4a3a] text-center mb-3">
+          <h2 className="text-lg sm:text-[20px] font-medium leading-[30px] tracking-[-0.45px] text-[#5a4a3a] text-center mb-3">
             What I Inspect
           </h2>
-          <p className="text-base leading-6 tracking-[-0.31px] text-[#45556c] text-center max-w-[672px] mx-auto mb-12">
+          <p className="text-sm sm:text-base leading-6 tracking-[-0.31px] text-[#45556c] text-center max-w-[672px] mx-auto mb-8 sm:mb-12 px-4">
             Every inspection is thorough, unbiased, and designed to give you peace of mind about your home purchase or sale.
           </p>
           
-          <div className="grid grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <div className="bg-white border border-[#e2e8f0] rounded-[14px] p-6">
               <div className="bg-[#e8f0e6] rounded-[10px] w-12 h-12 flex items-center justify-center mb-4">
                 <HomeOutlinedIcon sx={{ fontSize: 24, color: '#7a9b76' }} />
@@ -137,8 +138,8 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="bg-[#0f172b] py-24 px-[160.5px]">
-        <div className="max-w-[1216px] mx-auto grid grid-cols-2 gap-16">
+      <section id="about" className="bg-[#0f172b] py-12 sm:py-16 lg:py-24 px-4 sm:px-8 lg:px-[160.5px]">
+        <div className="max-w-[1216px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
           <div className="relative h-[400px] rounded-[14px] overflow-hidden shadow-xl">
             <Image
               src="/mat-inspecting-kitchen.png"
@@ -196,24 +197,24 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="bg-white py-24 px-[160.5px]">
+      <section id="contact" className="bg-white py-12 sm:py-16 lg:py-24 px-4 sm:px-8 lg:px-[160.5px]">
         <div className="max-w-[1216px] mx-auto">
-          <h2 className="text-[20px] font-medium leading-[30px] tracking-[-0.45px] text-[#5a4a3a] text-center mb-3">
+          <h2 className="text-lg sm:text-[20px] font-medium leading-[30px] tracking-[-0.45px] text-[#5a4a3a] text-center mb-3">
             Construction permitting and inspections consultation
           </h2>
-          <p className="text-base leading-6 tracking-[-0.31px] text-[#45556c] text-center max-w-[672px] mx-auto mb-12">
+          <p className="text-sm sm:text-base leading-6 tracking-[-0.31px] text-[#45556c] text-center max-w-[672px] mx-auto mb-8 sm:mb-12 px-4">
             Navigating permits, inspections, or construction approvals? Provide a few details below and I'll connect with you within 24 hours to clarify requirements and next steps.
           </p>
           
-          <div className="grid grid-cols-3 gap-12">
-            <form ref={formRef} action={formAction} className="col-span-2 flex flex-col gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            <form ref={formRef} action={formAction} className="lg:col-span-2 flex flex-col gap-6">
               {state.message && (
                 <div className={`p-4 rounded-[10px] ${state.success ? 'bg-[#e8f0e6] text-[#314158]' : 'bg-red-50 text-red-800'}`}>
                   {state.message}
                 </div>
               )}
               
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label className="block text-base leading-6 tracking-[-0.31px] text-[#314158] mb-2">
                     Full Name *
@@ -240,7 +241,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label className="block text-base leading-6 tracking-[-0.31px] text-[#314158] mb-2">
                     Phone Number *
@@ -335,9 +336,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#5a4a3a] py-12 px-[160.5px]">
+      <footer className="bg-[#5a4a3a] py-8 sm:py-12 px-4 sm:px-8 lg:px-[160.5px]">
         <div className="max-w-[1216px] mx-auto">
-          <div className="grid grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8">
             <div>
               <h3 className="text-lg font-medium leading-[27px] tracking-[-0.44px] text-[#f1f5f9] mb-4">
                 Mat Blockovich
