@@ -37,7 +37,10 @@ export async function submitContactForm(prevState: any, formData: FormData) {
 
     const sendSmtpEmail = new brevo.SendSmtpEmail();
     sendSmtpEmail.subject = 'New Inspection Request - Mat Blockovich Home Inspections';
-    sendSmtpEmail.to = [{ email: 'tim@onemorelight.cc', name: 'Tim Watts' }];
+    sendSmtpEmail.to = [
+      { email: 'tim@onemorelight.cc', name: 'Tim Watts' },
+      { email: 'blockovich1@gmail.com', name: 'Mat Blockovich' }
+    ];
     sendSmtpEmail.htmlContent = `
       <h2>New Inspection Request</h2>
       <p><strong>Name:</strong> ${name}</p>
