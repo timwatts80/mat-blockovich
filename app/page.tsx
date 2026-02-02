@@ -135,7 +135,7 @@ export default function Home() {
                 Detailed Reporting
               </h3>
               <p className="text-sm leading-5 tracking-[-0.15px] text-[#45556c]">
-                Same-day digital reports with photos and descriptions for every inspection.
+                Detailed inspection reports within 24 hours.
               </p>
             </div>
             
@@ -183,7 +183,7 @@ export default function Home() {
               Why Choose MB Inspections?
             </h2>
             <p className="text-base leading-6 tracking-[-0.31px] text-[#cad5e2] mb-8">
-              Mat is a carpenter by trade with 25 years in the construction industry and more than 10 years as an Utah licensed ICC Certified Combination Building Inspector.  With all this real world experience and his vast knowledge around homes and the building process, you can feel more confident purchasing your new home. 
+              Mat is a carpenter by trade with 25 years in the construction industry and more than 10 years as a Utah licensed ICC Certified Combination Building Inspector.  Thanks to all of his real-world experience and extensive knowledge of homes and how they’re built, you can feel confident and informed when purchasing your new home. 
             </p>
             
             <div className="flex flex-col gap-3 mb-8">
