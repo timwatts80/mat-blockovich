@@ -39,6 +39,7 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-4 lg:gap-8">
             <a href="#hero" className="text-[#314158] text-sm lg:text-base hover:text-[#7a9b76] transition-colors">Home</a>
             <a href="#services" className="text-[#314158] text-sm lg:text-base hover:text-[#7a9b76] transition-colors">Services</a>
+            <a href="#pricing" className="text-[#314158] text-sm lg:text-base hover:text-[#7a9b76] transition-colors">Pricing</a>
             <a href="#about" className="text-[#314158] text-sm lg:text-base hover:text-[#7a9b76] transition-colors">About</a>
             <a href="#contact" className="bg-[#7a9b76] text-white px-4 lg:px-6 py-2 rounded-[10px] text-sm lg:text-base hover:bg-[#6a8b66] transition-colors">Contact</a>
           </div>
@@ -134,7 +135,7 @@ export default function Home() {
                 Detailed Reporting
               </h3>
               <p className="text-sm leading-5 tracking-[-0.15px] text-[#45556c]">
-                Same-day digital reports with photos and descriptions for every inspection.
+                Detailed inspection reports within 24 hours.
               </p>
             </div>
             
@@ -167,22 +168,22 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="bg-[#0f172b] py-12 sm:py-16 lg:py-24 px-4 sm:px-8 lg:px-[160.5px]">
-        <div className="max-w-[1216px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
-          <div className="relative h-[400px] rounded-[14px] overflow-hidden shadow-xl">
+        <div className="max-w-[1216px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 lg:items-stretch">
+          <div className="relative h-full min-h-[320px] rounded-[14px] overflow-hidden shadow-xl">
             <Image
-              src="/mat-inspecting-kitchen.png"
+              src="/mat-inspection-kitchen.jpeg"
               alt="Mat Blockovich at work"
               fill
-              className="object-cover"
+              className="object-cover object-[center_30%]"
             />
           </div>
           
           <div>
             <h2 className="text-base leading-6 tracking-[-0.31px] text-white mb-6">
-              Why Choose Mat Blockovich?
+              Why Choose MB Inspections?
             </h2>
             <p className="text-base leading-6 tracking-[-0.31px] text-[#cad5e2] mb-8">
-              Buying or selling a home should feel exciting, not stressful. I provide detailed, honest inspections that cut through uncertainty and give you the confidence to move forward decisively.
+              Mat is a carpenter by trade with 25 years in the construction industry and more than 10 years as a Utah licensed ICC Certified Combination Building Inspector.  Thanks to all of his real-world experience and extensive knowledge of homes and how they’re built, you can feel confident and informed when purchasing your new home. 
             </p>
             
             <div className="flex flex-col gap-3 mb-8">
@@ -224,6 +225,92 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section id="pricing" className="bg-[#f8fafc] py-12 sm:py-16 lg:py-24 px-4 sm:px-8 lg:px-[160.5px]">
+        <div className="max-w-[1216px] mx-auto">
+          <h2 className="text-lg sm:text-[20px] font-medium leading-[30px] tracking-[-0.45px] text-[#5a4a3a] text-center mb-3">
+            Pricing
+          </h2>
+          <p className="text-sm sm:text-base leading-6 tracking-[-0.31px] text-[#45556c] text-center max-w-[768px] mx-auto mb-10 sm:mb-12 px-4">
+            Transparent, straightforward pricing based on property type and size. Need a custom quote? I’m happy to help.
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+            <div className="bg-white border border-[#e2e8f0] rounded-[16px] p-6 sm:p-8 shadow-sm">
+              <h3 className="text-base sm:text-lg leading-6 tracking-[-0.31px] text-[#0f172b] mb-6">
+                Home Inspection Pricing
+              </h3>
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center justify-between border-b border-[#e2e8f0] pb-4">
+                  <div>
+                    <p className="text-sm sm:text-base text-[#0f172b]">Townhomes & Condos</p>
+                  </div>
+                  <p className="text-sm sm:text-base font-medium text-[#0f172b]">$300</p>
+                </div>
+                <div className="flex items-center justify-between border-b border-[#e2e8f0] pb-4">
+                  <div>
+                    <p className="text-sm sm:text-base text-[#0f172b]">Single family home</p>
+                    <p className="text-xs sm:text-sm text-[#64748b]">2,000 square feet and smaller</p>
+                  </div>
+                  <p className="text-sm sm:text-base font-medium text-[#0f172b]">$350</p>
+                </div>
+                <div className="flex items-center justify-between border-b border-[#e2e8f0] pb-4">
+                  <div>
+                    <p className="text-sm sm:text-base text-[#0f172b]">Single family home</p>
+                    <p className="text-xs sm:text-sm text-[#64748b]">2,000–3,500 square feet</p>
+                  </div>
+                  <p className="text-sm sm:text-base font-medium text-[#0f172b]">$400</p>
+                </div>
+                <div className="flex items-center justify-between border-b border-[#e2e8f0] pb-4">
+                  <div>
+                    <p className="text-sm sm:text-base text-[#0f172b]">Single family home</p>
+                    <p className="text-xs sm:text-sm text-[#64748b]">3,500–5,000 square feet</p>
+                  </div>
+                  <p className="text-sm sm:text-base font-medium text-[#0f172b]">$450</p>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm sm:text-base text-[#0f172b]">Single family home</p>
+                    <p className="text-xs sm:text-sm text-[#64748b]">Larger than 5,000 square feet</p>
+                  </div>
+                  <p className="text-sm sm:text-base font-medium text-[#0f172b]">Call for pricing</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white border border-[#e2e8f0] rounded-[16px] p-6 sm:p-8 shadow-sm">
+              <h3 className="text-base sm:text-lg leading-6 tracking-[-0.31px] text-[#0f172b] mb-6">
+                Add-On Testing & Specialty Services
+              </h3>
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center justify-between border-b border-[#e2e8f0] pb-4">
+                  <p className="text-sm sm:text-base text-[#0f172b]">Radon testing</p>
+                  <p className="text-sm sm:text-base font-medium text-[#0f172b]">$150</p>
+                </div>
+                <div className="flex items-center justify-between border-b border-[#e2e8f0] pb-4">
+                  <p className="text-sm sm:text-base text-[#0f172b]">Meth testing</p>
+                  <p className="text-sm sm:text-base font-medium text-[#0f172b]">$100</p>
+                </div>
+                <div className="flex items-center justify-between border-b border-[#e2e8f0] pb-4">
+                  <p className="text-sm sm:text-base text-[#0f172b]">Sewer scope</p>
+                  <p className="text-sm sm:text-base font-medium text-[#0f172b]">Call for pricing</p>
+                </div>
+                <div className="flex items-center justify-between">
+                  <p className="text-sm sm:text-base text-[#0f172b]">Mold testing</p>
+                  <p className="text-sm sm:text-base font-medium text-[#0f172b]">Call for pricing</p>
+                </div>
+              </div>
+
+              <div className="mt-6 bg-[#e8f0e6] rounded-[12px] p-4">
+                <p className="text-sm leading-5 tracking-[-0.15px] text-[#314158]">
+                  Ready to schedule or have questions? Call or text (801) 828-7100 for availability.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="bg-white py-12 sm:py-16 lg:py-24 px-4 sm:px-8 lg:px-[160.5px]">
         <div className="max-w-[1216px] mx-auto">
@@ -243,7 +330,7 @@ export default function Home() {
               )}
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                <div>
+                <div suppressHydrationWarning>
                   <label className="block text-base leading-6 tracking-[-0.31px] text-[#314158] mb-2">
                     Full Name *
                   </label>
@@ -255,7 +342,7 @@ export default function Home() {
                     className="w-full border border-[#cad5e2] rounded-[10px] px-4 py-3 text-base text-[#314158] placeholder:text-gray-500"
                   />
                 </div>
-                <div>
+                <div suppressHydrationWarning>
                   <label className="block text-base leading-6 tracking-[-0.31px] text-[#314158] mb-2">
                     Email Address *
                   </label>
@@ -270,7 +357,7 @@ export default function Home() {
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                <div>
+                <div suppressHydrationWarning>
                   <label className="block text-base leading-6 tracking-[-0.31px] text-[#314158] mb-2">
                     Phone Number *
                   </label>
@@ -282,7 +369,7 @@ export default function Home() {
                     className="w-full border border-[#cad5e2] rounded-[10px] px-4 py-3 text-base text-[#314158] placeholder:text-gray-500"
                   />
                 </div>
-                <div>
+                <div suppressHydrationWarning>
                   <label className="block text-base leading-6 tracking-[-0.31px] text-[#314158] mb-2">
                     Property Address
                   </label>
@@ -295,7 +382,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div>
+              <div suppressHydrationWarning>
                 <label className="block text-base leading-6 tracking-[-0.31px] text-[#314158] mb-2">
                   Additional Information
                 </label>
